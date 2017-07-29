@@ -2,7 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var htmlRoutes = require("./app/routing/htmlRoutes.js");
+
 
 
 var app = express();
@@ -18,7 +18,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 var friends = [{
     
 }]
-
+/* Basic route that sends the user first to the AJAX Page from the htmlRoutes. The get to show the html and css on the website*/
+require("./app/routing/htmlRoutes.js");
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
