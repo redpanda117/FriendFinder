@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 
     <title>Friend Finder Survey</title>
 
@@ -29,14 +29,14 @@
                             <input type="text" class="form-control" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Link to Photo</label>
+                            <label for="img">Link to Photo</label>
                             <input type="text" class="form-control" id="image">
                         </div>
 
                         <h3>Question 1</h3>
                         <div class="form-group">
                             <label for="sel1"> Organization is a life necessity</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q1">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -49,7 +49,7 @@
                         <h3>Question 2</h3>
                         <div class="form-group">
                             <label for="sel1"> It is important to have a consistently positive out look in life.</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q2">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -62,7 +62,7 @@
                         <h3>Question 3</h3>
                         <div class="form-group">
                             <label for="sel1"> Intelligence is an important quality to have.</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q3">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -75,7 +75,7 @@
                         <h3>Question 4</h3>
                         <div class="form-group">
                             <label for="sel1">Are you able to take a joke?</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q4">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -88,7 +88,7 @@
                         <h3>Question 5</h3>
                         <div class="form-group">
                             <label for="sel1">It is important to be creative and to seek out new things.</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q5">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -101,7 +101,7 @@
                         <h3>Question 6</h3>
                         <div class="form-group">
                             <label for="sel1">Are you a highly agreeable person becuase you are very open minded?</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q6">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -114,7 +114,7 @@
                         <h3>Question 7</h3>
                         <div class="form-group">
                             <label for="sel1">Is it important to be creative and to seek out new things.</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q7">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -127,7 +127,7 @@
                         <h3>Question 8</h3>
                         <div class="form-group">
                             <label for="sel1">Do you see yourself as the life of any party?</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q8">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -140,7 +140,7 @@
                         <h3>Question 9</h3>
                         <div class="form-group">
                             <label for="sel1">How concern are you of what people think of you? </label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q9">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -153,7 +153,7 @@
                         <h3>Question 10</h3>
                         <div class="form-group">
                             <label for="sel1">How competitive are you?</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="q10">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -191,21 +191,39 @@
             </div>
         </div>
 
-<!--This contains the api records of people that has taken the survey and the link to the github repo of the site-->
+        <!--This contains the api records of people that has taken the survey and the link to the github repo of the site-->
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <p id="links">
-                    <a href="">API Friends List </a> |
+                    <a href="/api/friends">API Friends List </a> |
                     <a href="https://github.com/redpanda117/FriendFinder"> GitHub Repo</a></p>
             </div>
 
         </div>
-    
+
     </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--This is the code that get the data the user input and sends it to the friends.js file to hold the data.-->
+<script>
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#image").val().trim(),
+            scores: [$("#q1").val(), $("#q2").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
+        }
+    })
+    $.post("/api/friends", newFriends)
+        .done(function(data) {
+            //making sure the right data was sent       
+            console.log(data);
+        })
+
+</script>
 
 </html>

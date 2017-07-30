@@ -18,6 +18,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 /* Basic route that sends the user first to the AJAX Page from the htmlRoutes. The get to show the html and css on the website*/
 require("./app/routing/htmlRoutes.js")(app);
 
+//route to the apiRoutes to get the friends array to show.
+require("./app/routing/apiRoutes.js")(app);
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
