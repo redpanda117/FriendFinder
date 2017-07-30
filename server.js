@@ -16,7 +16,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
 /* Basic route that sends the user first to the AJAX Page from the htmlRoutes. The get to show the html and css on the website*/
-require("./app/routing/htmlRoutes.js");
+require("./app/routing/htmlRoutes.js")(app);
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
