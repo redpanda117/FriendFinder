@@ -113,7 +113,7 @@
 
                         <h3>Question 7</h3>
                         <div class="form-group">
-                            <label for="sel1">Is it important to be creative and to seek out new things.</label>
+                            <label for="sel1">To be a fun person you need to be spontaneous.</label>
                             <select class="form-control" id="q7">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
@@ -163,7 +163,7 @@
                             </select>
                         </div>
 
-                        <button type="button" class="btn btn-primary" id="submit" data-toggle="modal" data-target="#myResult">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="submit" data-toggle="modal" data-target="#myResult">Submit</button>
 
                     </div>
 
@@ -216,14 +216,14 @@
             name: $("#name").val().trim(),
             photo: $("#image").val().trim(),
             scores: [$("#q1").val(), $("#q2").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
-        }
-    })
-    $.post("/api/friends", newFriends)
+        };
+    
+    $.post("/api/friends", newFriend)
         .done(function(data) {
             //making sure the right data was sent       
             console.log(data);
         })
-
+})
 </script>
 
 </html>
