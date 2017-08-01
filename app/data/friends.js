@@ -1,7 +1,7 @@
 //data of all friends
 var friends = [{
         "name": "Monica",
-        "photo": "https://images.moviepilot.com/images/c_limit,q_auto:good,w_600/courteney-cox-courteney-cox-33143449-1600-1200-10-years-later-still-friends-where-are-monica-phoebe-joey-rachel-ross-chandler-now-jpeg-122716/10-years-later-still-friends-where-are-monica-phoebe-joey-rachel-ross-chandler-now.jpg",
+        "photo": "http://www.wbnx.com/uploads/shows/bios/friends_monica.jpg",
         "scores": [
             5,
             3,
@@ -57,7 +57,35 @@ var friends = [{
             5,
             4,
             2
-]
+        ]
+},{
+        "name": "Joey",
+        "photo": "http://digitalspyuk.cdnds.net/14/37/480x590/gallery_ustv-friends-matt-leblanc-joey.jpg",
+        "scores": [
+            1,
+            4,
+            5,
+            4,
+            3,
+            4,
+            5,
+            1,
+            2
+        ]   
+},{
+        "name": "Rachel",
+        "photo": "https://moobys.es/wp-content/uploads/2014/11/jenniferantes.jpg",
+        "scores": [
+            2,
+            4,
+            4,
+            3,
+            3,
+            5,
+            5,
+            5,
+            2
+        ]
 }
               ];
 
