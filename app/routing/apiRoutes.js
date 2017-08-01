@@ -23,6 +23,7 @@ module.exports = function (app) {
 app.post("/api/friends", function (req, res) {
 // req.body hosts is equal to the JSON post sent from the user
 var newFriends = req.body;
+    
 //a loop going through the friends array
     for(var i = 0; i < friends.length; i++){
 //inputing info through the function to calculate the difference in the user and each friends score. 
@@ -35,9 +36,10 @@ var newFriends = req.body;
     }  
 //see the right totalDiff score was push to the calcDiff array
     console.log(calcDiff); 
+    
 //looping through the calcDiff array to find the smallest number 
         for (var x = 0; x < calcDiff.length; x++){
-//useing the first number as a starting point of comparison. the numbers in the array will keep on being comapare to the first number until a smaller nmber is found.            
+//useing the first number as a starting point of comparison. The numbers in the array will keep on being comapare to the first number until a smaller number is found.            
             if(calcDiff[x] < calcDiff[bestMatch]){
 //when a smaller number is found then it will replace the current comparison number becuse it is smaller.                 
                 bestMatch = x;  
@@ -49,7 +51,7 @@ var newFriends = req.body;
 //function that goes through user scores and friends scores and calculate the difference.
     function totalDifference(userScore,friends){
 //a loop going through just the scores of the friends and user scores.     
-        for(var j = 0; j< userScore.length; j++){
+        for(var j = 0; j < userScore.length; j++){
 //the calculation of the difference of the user and friends.
         totalDiff += Math.abs(parseInt(userScore[j])- parseInt(friends[j]));
         }
