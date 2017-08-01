@@ -7,6 +7,8 @@ var friends = require("../data/friends.js");
 var totalDiff = 0;
 //an array that holds all of the calculaed score.
 var calcDiff =[];
+//the variable that will hold the index of the most compatible match.Staart at zero because it will be the startng point ue to compare.
+var bestMatch = 0;
 
 module.exports = function (app) {
 
@@ -26,13 +28,25 @@ var newFriends = req.body;
 //inputing info through the function to calculate the difference in the user and each friends score. 
         totalDifference(newFriends.scores,friends[i].scores);
 //making sure the calculation is working and is properly looping through each friends 
-        console.log(totalDiff);        
+        console.log(totalDiff); 
+        calcDiff.push(totalDiff);
 //reseting the value to totalDiff to propery calculate the next friend in the friends array.
         totalDiff = 0;    
     }  
-    
+//see the right totalDiff score was push to the calcDiff array
+    console.log(calcDiff); 
+//looping through the calcDiff array to find the smallest number 
+        for (var x = 0; x < calcDiff.length; x++){
+//useing the first number as a starting point of comparison. the numbers in the array will keep on being comapare to the first number until a smaller nmber is found.            
+            if(calcDiff[x] < calcDiff[bestMatch]){
+//when a smaller number is found then it will replace the current comparison number becuse it is smaller.                 
+                bestMatch = x;  
+            }   
+        }
+//making sure the right index was calculated    
+    console.log(bestMatch);
+            
 //function that goes through user scores and friends scores and calculate the difference.
-
     function totalDifference(userScore,friends){
 //a loop going through just the scores of the friends and user scores.     
         for(var j = 0; j< userScore.length; j++){
@@ -42,6 +56,7 @@ var newFriends = req.body;
         return totalDiff;
         }
 
+    
 // We then add the json the user sent to the friends array in the friends.js file.So it will show up in the /api/friends.
     friends.push(newFriends);
     
