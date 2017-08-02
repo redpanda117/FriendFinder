@@ -35,6 +35,7 @@ $("#submit").on("click", function(event) {
 
 	    	// Show the modal  
 	    	$("#myResult").modal('toggle');
+        
     	})
     }else{
         $("#needAnswer").modal('toggle');

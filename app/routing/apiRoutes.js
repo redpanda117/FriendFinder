@@ -27,7 +27,7 @@ var newFriends = req.body;
 //a loop going through the friends array
     for(var i = 0; i < friends.length; i++){
 //inputing info through the function to calculate the difference in the user and each friends score. 
-        totalDifference(newFriends.scores,friends[i].scores);
+ totalDifference(newFriends.scores,friends[i].scores);
 //making sure the calculation is working and is properly looping through each friends 
         console.log(totalDiff); 
         calcDiff.push(totalDiff);
@@ -63,8 +63,8 @@ var newFriends = req.body;
     
 // We then add the json the user sent to the friends array in the friends.js file.So it will show up in the /api/friends.
     friends.push(newFriends);
-    
-    
+//clear the array for the next person calculation.    
+    calcDiff =[];
 })
 
 };
