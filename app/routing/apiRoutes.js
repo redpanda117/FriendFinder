@@ -35,7 +35,7 @@ var newFriends = req.body;
         totalDiff = 0;    
     }  
 //see the right totalDiff score was push to the calcDiff array
-    console.log(calcDiff); 
+    console.log(calcDiff);
     
 //looping through the calcDiff array to find the smallest number 
         for (var x = 0; x < calcDiff.length; x++){
@@ -47,7 +47,7 @@ var newFriends = req.body;
         }
 //making sure the right index was calculated    
     console.log(bestMatch);
-            
+    
 //function that goes through user scores and friends scores and calculate the difference.
     function totalDifference(userScore,friends){
 //a loop going through just the scores of the friends and user scores.     
@@ -58,6 +58,8 @@ var newFriends = req.body;
         return totalDiff;
         }
 
+//sending the most compatible friends so it can be display in the html    
+    res.send(friends[bestMatch]);    
     
 // We then add the json the user sent to the friends array in the friends.js file.So it will show up in the /api/friends.
     friends.push(newFriends);

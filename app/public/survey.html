@@ -170,7 +170,29 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
+        
+<!-- Modal that show up if there is still questions that need answers-->
+        <div class="modal fade" id="needAnswer" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">Error</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h3>There are still unanswer questions. Please provide an answer for every question.</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+<!-- Modal after answering all questions-->
         <div class="modal fade" id="myResult" role="dialog">
             <div class="modal-dialog">
 
@@ -181,7 +203,8 @@
                         <h4 class="modal-title">Your Results</h4>
                     </div>
                     <div class="modal-body">
-
+                        <h3 id= "compatibleName"> </h3>
+                        <img id = "compatiblePhoto" src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg" alt ="image of your most compatible friend">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
@@ -207,40 +230,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!--This is the code that get the data the user input and sends it to the friends.js file to hold the data.-->
-<script>
-
-    $("#submit").on("click", function(event) {
-        
-//making sure all the questions have an answer and none is empty.
-    function validation(){
-        isValid = true
-//validating the multiple choice.Also validating if a name and picture link was given. 
-        $(".form-control").each(function() {
-		if ( $(this).val() === "" )
-			isValid = false;
-		})
-        return isValid;
-    }
-        
-    if (validation()== true){
-        event.preventDefault();
-        var newFriend = {
-            name: $("#name").val().trim(),
-            photo: $("#image").val().trim(),
-            scores: [$("#q1").val(), $("#q2").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
-        };
+<script src = "javascript/survey.js"></script>
     
-    $.post("/api/friends", newFriend)
-    // Show the modal  
-		    	$("#myResult").modal('toggle');
-
-    }else{
-        alert("Please answer all the questions.")
-    }
-})
-    
-</script>
-
 </html>

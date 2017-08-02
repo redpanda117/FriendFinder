@@ -27,6 +27,13 @@ body {
     text-align: center;
     font-size: 45px;
 }
+#compatiblePhoto{
+    height: auto;
+    width: 550px;
+}
 
+#compatibleName{
+    text-align: center;
+}
 
 
