@@ -3,3 +3,5 @@ A full-stack site will take in results of the users' surveys, then compare their
 
 Have some fun and try it out.
 https://calm-atoll-18810.herokuapp.com/
+
+![App starts](app/public/assets/Screenshot.jpg)
